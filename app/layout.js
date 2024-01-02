@@ -9,7 +9,7 @@ const poppins = Poppins({
 });
 export const metadata = {
   title: 'Mysocials',
-  description: 'An open-source link in bio tool for content creaters and developers.',
+  description: 'Open-Source link in bio tool for content creaters, developers and enthusiasts.',
 }
 
 export default function RootLayout({ children }) {
