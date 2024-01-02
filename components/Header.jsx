@@ -7,7 +7,7 @@ import Logo from "./Logo";
 export default async function Header() {
     const user = await currentUser();
     return (
-        <header className="flex justify-between items-center py-6 px-6 md:px-20 lg:px-32">
+        <header className="flex justify-between items-center py-[22px] px-6 md:px-20 lg:px-32">
             <div>
                 <Logo />
             </div>
