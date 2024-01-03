@@ -14,11 +14,11 @@ export default function TopNav({ active = [], showBack = false, link }) {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    if(data.data !== null){
+                    if (data.data !== null) {
                         setUsername(data.data.username);
                         setShow(true);
                     }
-                    else{
+                    else {
                         setShow(true);
                     }
                 });
