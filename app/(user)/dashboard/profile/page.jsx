@@ -5,17 +5,17 @@ import { Input } from "@/components/ui/input";
 import { ClerkLoaded, ClerkLoading, currentUser } from "@clerk/nextjs";
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
 
 export default async function Page() {
     const { imageUrl, emailAddresses, firstName, lastName } = await currentUser();
-    // console.log(user)
+
     return (
         <div>
             <Header />
             <TopNav active={["Profile"]} link="" />
 
-            <div className="py-10 px-7 md:px-20 lg:px-32 mb-10">
-                <h1 className="text-3xl font-bold">Profile<span className="text-primary">.</span></h1>
+            <div className="py-10 px-7 md:px-20 lg:px-32 mb-14">
                 <ClerkLoaded>
                     <div className="flex flex-col items-center justify-center gap-2 mt-10">
                         <img
@@ -27,15 +27,19 @@ export default async function Page() {
                     </div>
                 </ClerkLoaded>
                 <ClerkLoaded>
-                    <div className="grid gap-2 mt-5">
+                    <div className="grid gap-2 mt-5 lg:px-40">
                         <Label htmlFor="firstName" className="mt-3">First Name</Label>
                         <Input id="firstName" value={firstName} readonly />
 
                         <Label htmlFor="lname" className="mt-3">Last Name</Label>
-                        <Input id="lname" value={lastName} readonly />
+                        <Input id="lname" value={lastName || "Update Lastname From Google Account"} readonly />
 
                         <Label htmlFor="email" className="mt-3">Email</Label>
                         <Input id="email" value={emailAddresses[0].emailAddress} readonly />
+                    </div>
+                    <div className="mt-5 grid gap-2 lg:px-40">
+                        <Button disabled>Edit</Button>
+                        <p className="text-xs text-center">To edit your profile click <a target="_blank" href="https://myaccount.google.com/personal-info" className="text-primary hover:underline">Manage Account</a><span className="text-red-600"> *</span></p>
                     </div>
                 </ClerkLoaded>
 
