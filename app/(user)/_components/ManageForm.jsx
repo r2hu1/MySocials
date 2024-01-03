@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { databases } from "@/lib/appwrite"
-import { handlePublish } from "@/lib/handlePublish"
 import { useState } from "react"
 
 export default function ManageForm() {
@@ -19,7 +17,6 @@ export default function ManageForm() {
     const handlePublishEvent = async (e) => {
         e.preventDefault();
         setIsEdit(true);
-        handlePublish(username, bio, insta, face, github);
     };
 
     return (
