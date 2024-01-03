@@ -11,7 +11,7 @@ export default async function Header() {
                 <Logo />
             </div>
             <div className="flex gap-3 items-center">
-                <Button asChild><Link href={!user ? "/sign-in" : "/dashboard"}>Login</Link></Button>
+                <Button asChild><Link href={!user ? "/sign-in" : "/dashboard/profile"}>Login</Link></Button>
             </div>
         </header>
     )
