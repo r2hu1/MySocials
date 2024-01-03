@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { LoaderIcon } from "lucide-react"
 import { useState } from "react"
 
 export default function ManageForm() {
@@ -14,9 +15,14 @@ export default function ManageForm() {
     const [face, setFace] = useState('');
     const [github, setGithub] = useState('');
 
+    const [isPublished, setIsPublished] = useState(false);
+
     const handlePublishEvent = async (e) => {
+        setIsPublished(true);
         e.preventDefault();
         setIsEdit(true);
+        console.log(username, bio, insta, face, github);
+        setIsPublished(false);
     };
 
     return (
@@ -38,7 +44,7 @@ export default function ManageForm() {
 
             <div className="flex gap-2 mt-8">
                 <Button type="button" className="w-full" variant="outline" onClick={() => setIsEdit(!isEdit)}>{isEdit ? "Edit" : "Cancel"}</Button>
-                <Button className="w-full" type="submit">Publish</Button>
+                <Button className="w-full" type="submit">{ isPublished ? (<LoaderIcon className="w-4 h-4 animate-spin"/>) : "Publish"}</Button>
             </div>
         </form>
     )
