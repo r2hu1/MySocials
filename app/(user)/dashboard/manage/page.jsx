@@ -24,7 +24,7 @@ export default async function Page() {
                             alt="Profile image"
                         />
                         <Label>Profile Image</Label>
-                        <p className="text-xs">In order to edit profile image visit <a href="/dashoard/manage" className="text-primary hover:underline">Manage</a><span className="text-red-600"> *</span></p>
+                        <p className="text-xs">In order to edit profile image visit <a href="/dashboard/manage" className="text-primary hover:underline">Manage</a><span className="text-red-600"> *</span></p>
                     </div>
                     <ManageForm/>
                 </div>

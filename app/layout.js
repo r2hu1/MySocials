@@ -3,13 +3,17 @@ import './globals.css';
 import { ThemeProvider } from "@/components/utils/theme-provider";
 import { ClerkProvider } from '@clerk/nextjs';
 import NextTopLoader from 'nextjs-toploader';
+import { Toaster } from "@/components/ui/toaster"
 
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 export const metadata = {
-  title: 'Mysocials',
+  title: {
+    default: 'Mysocials',
+    template: '%s | Mysocials',
+  },
   description: 'Open-Source link in bio tool for content creaters, developers and enthusiasts.',
 }
 
@@ -40,6 +44,7 @@ export default function RootLayout({ children }) {
               showAtBottom={false}
             />
             {children}
+            <Toaster />
           </ThemeProvider>
         </body>
       </html>

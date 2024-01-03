@@ -6,6 +6,7 @@ import { ClerkLoaded, ClerkLoading, currentUser } from "@clerk/nextjs";
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default async function Page() {
     const { imageUrl, emailAddresses, firstName, lastName } = await currentUser();
@@ -39,7 +40,7 @@ export default async function Page() {
                     </div>
                     <div className="mt-5 grid gap-2 lg:px-40">
                         <Button disabled>Edit</Button>
-                        <p className="text-xs text-center">To edit your profile click <a target="_blank" href="https://myaccount.google.com/personal-info" className="text-primary hover:underline">Manage Account</a><span className="text-red-600"> *</span></p>
+                        <p className="text-xs text-center">To edit your profile visit <Link href="/user-profile/profile" className="text-primary hover:underline">User Profile</Link><span className="text-red-600"> *</span></p>
                     </div>
                 </ClerkLoaded>
 
