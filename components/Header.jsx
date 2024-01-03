@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ModeToggle } from "./ModeToggle";
 import { Button } from "./ui/button";
 import { currentUser } from "@clerk/nextjs";
 import Logo from "./Logo";
@@ -13,7 +12,6 @@ export default async function Header() {
             </div>
             <div className="flex gap-3 items-center">
                 <Button asChild><Link href={!user ? "/sign-in" : "/dashboard"}>Login</Link></Button>
-                <ModeToggle />
             </div>
         </header>
     )
