@@ -38,8 +38,7 @@ export default function RootLayout({ children }) {
               easing="ease"
               speed={200}
               shadow="0 0 10px #7c3aed,0 0 5px #7c3aed"
-              template='<div className="bar" role="bar"><div className="peg"></div></div> 
-  <div className="spinner" role="spinner"><div className="spinner-icon"></div></div>'
+              template='<div class="bar" role="bar"><div class="peg"></div></div><div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
               zIndex={1600}
               showAtBottom={false}
             />
