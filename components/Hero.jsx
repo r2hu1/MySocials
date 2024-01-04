@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { currentUser } from "@clerk/nextjs";
+import DemoImage from "./DemoImage";
 
 
 export default async function Hero() {
@@ -22,7 +23,7 @@ export default async function Hero() {
                 <Button variant="outline" asChild><Link href="https://pay.rahul.eu.org">View Demo <ArrowRight className="h-4 w-4 -rotate-45 ml-1" /></Link></Button>
             </div>
             <div className="mt-20 bg-secondary p-1 rounded-lg w-fit mx-auto">
-                <img className="rounded-lg" src="https://i.postimg.cc/x13ZK3wd/Screenshot-2024-01-02-233517.png" alt="demo" />
+                <DemoImage/>
             </div>
         </div>
     )
