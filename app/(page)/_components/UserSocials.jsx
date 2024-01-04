@@ -68,7 +68,7 @@ export default function UserSocials({ userDataName }) {
             </div>
             <div className="grid place-content-center mb-14 text-center gap-1 px-2">
                 <h1 className="text-3xl font-bold">{name}</h1>
-                <p className="text-sm max-w-sm">{bio}</p>
+                <p className="text-sm max-w-[320px]">{bio}</p>
                 {loding && (
                     <Skeleton className="h-8 w-40 mx-auto" />
                 )}
