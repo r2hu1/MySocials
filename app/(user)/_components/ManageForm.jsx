@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { LoaderIcon } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useToast } from "@/components/ui/use-toast"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export default function ManageForm() {
     const { toast } = useToast();
@@ -19,6 +20,7 @@ export default function ManageForm() {
     const [github, setGithub] = useState('');
     const [youtube, setYoutube] = useState('');
     const [name, setName] = useState('');
+    const [loding, setLoding] = useState(true);
 
     const [isPublished, setIsPublished] = useState(false);
 
@@ -48,6 +50,7 @@ export default function ManageForm() {
             fetch("/api/get")
                 .then(res => res.json())
                 .then(data => {
+                    setLoding(false);
                     if (data.data !== null) {
                         setName(data.data.name);
                         setUsername(data.data.username);
@@ -63,31 +66,65 @@ export default function ManageForm() {
 
     return (
         <form className="grid gap-2 mt-5 lg:px-40" method="post" onSubmit={handlePublishEvent}>
-            <Label htmlFor="username" className="mt-2">Username</Label>
-            <Input value={username} onChange={(e) => setUsername(e.target.value)} disabled={isEdit} id="image" type="text" placeholder="Unique username" />
+            {!loding && (
+                <div className="grid gap-2 mt-5">
+                    <Label htmlFor="username" className="mt-2">Username</Label>
+                    <Input value={username} onChange={(e) => setUsername(e.target.value)} disabled={isEdit} id="image" type="text" placeholder="Unique username" />
 
-            <Label htmlFor="name" className="mt-2">Full Name</Label>
-            <Input value={name} onChange={(e) => setName(e.target.value)} disabled={isEdit} id="name" type="text" placeholder="John Doe" />
+                    <Label htmlFor="name" className="mt-2">Full Name</Label>
+                    <Input value={name} onChange={(e) => setName(e.target.value)} disabled={isEdit} id="name" type="text" placeholder="John Doe" />
 
-            <Label htmlFor="bio" className="mt-2">Bio</Label>
-            <Textarea value={bio} onChange={(e) => setBio(e.target.value)} disabled={isEdit} id="bio" placeholder="Tell others about yourself"></Textarea>
+                    <Label htmlFor="bio" className="mt-2">Bio</Label>
+                    <Textarea value={bio} onChange={(e) => setBio(e.target.value)} disabled={isEdit} id="bio" placeholder="Tell others about yourself"></Textarea>
 
-            <Label htmlFor="insta" className="mt-8">Instagram</Label>
-            <Input value={insta} onChange={(e) => setInsta(e.target.value)} disabled={isEdit} id="insta" type="text" placeholder="https://instagram.com/username" />
+                    <Label htmlFor="insta" className="mt-8">Instagram</Label>
+                    <Input value={insta} onChange={(e) => setInsta(e.target.value)} disabled={isEdit} id="insta" type="text" placeholder="https://instagram.com/username" />
 
-            <Label htmlFor="face" className="mt-2">Facebook</Label>
-            <Input value={face} onChange={(e) => setFace(e.target.value)} disabled={isEdit} id="face" type="text" placeholder="https://facebook.com/username" />
+                    <Label htmlFor="face" className="mt-2">Facebook</Label>
+                    <Input value={face} onChange={(e) => setFace(e.target.value)} disabled={isEdit} id="face" type="text" placeholder="https://facebook.com/username" />
 
-            <Label htmlFor="github" className="mt-2">Github</Label>
-            <Input value={github} onChange={(e) => setGithub(e.target.value)} disabled={isEdit} id="github" type="text" placeholder="https://github.com/username" />
+                    <Label htmlFor="github" className="mt-2">Github</Label>
+                    <Input value={github} onChange={(e) => setGithub(e.target.value)} disabled={isEdit} id="github" type="text" placeholder="https://github.com/username" />
 
-            <Label htmlFor="youtube" className="mt-2">YouTube</Label>
-            <Input value={youtube} onChange={(e) => setYoutube(e.target.value)} disabled={isEdit} id="youtube" type="text" placeholder="https://youtube.com/channel" />
+                    <Label htmlFor="youtube" className="mt-2">YouTube</Label>
+                    <Input value={youtube} onChange={(e) => setYoutube(e.target.value)} disabled={isEdit} id="youtube" type="text" placeholder="https://youtube.com/channel" />
 
-            <div className="flex gap-2 mt-8">
-                <Button type="button" className="w-full" variant="outline" onClick={() => setIsEdit(!isEdit)}>{isEdit ? "Edit" : "Cancel"}</Button>
-                <Button className="w-full" type="submit">{isPublished ? (<LoaderIcon className="w-4 h-4 animate-spin" />) : "Publish"}</Button>
-            </div>
+                    <div className="flex gap-2 mt-8">
+                        <Button type="button" className="w-full" variant="outline" onClick={() => setIsEdit(!isEdit)}>{isEdit ? "Edit" : "Cancel"}</Button>
+                        <Button className="w-full" type="submit">{isPublished ? (<LoaderIcon className="w-4 h-4 animate-spin" />) : "Publish"}</Button>
+                    </div>
+                </div>
+            )}
+
+            {loding && (
+                <div className="grid gap-2 mt-5">
+                    <Skeleton className="h-5 w-20" />
+                    <Skeleton className="h-10 w-full" />
+
+                    <Skeleton className="h-5 w-20" />
+                    <Skeleton className="h-10 w-full" />
+
+                    <Skeleton className="h-5 w-20" />
+                    <Skeleton className="h-10 w-full" />
+
+                    <Skeleton className="h-5 w-20" />
+                    <Skeleton className="h-10 w-full" />
+
+                    <Skeleton className="h-5 w-20" />
+                    <Skeleton className="h-10 w-full" />
+
+                    <Skeleton className="h-5 w-20" />
+                    <Skeleton className="h-10 w-full" />
+
+                    <Skeleton className="h-5 w-20" />
+                    <Skeleton className="h-10 w-full" />
+
+                    <div className="flex gap-2 mt-8">
+                        <Skeleton className="h-10 w-full" />
+                        <Skeleton className="h-10 w-full" />
+                    </div>
+                </div>
+            )}
         </form>
     )
 }

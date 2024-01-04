@@ -33,7 +33,7 @@ export default function TopNav({ active = [], showBack = false, link }) {
                 <div className="flex gap-2 items-center">
                     <Link href="/dashboard/profile" className={cn(primaryClass, active.includes("Profile") && activeClass)}>Profile</Link>
                     <Link href="/dashboard/manage" className={cn(primaryClass, active.includes("Edit") && activeClass)}>Manage Page</Link>
-                    <Link target="_blank" href={`/${username}`} className={cn(primaryClass, active.includes("Visit") && activeClass)}>View</Link>
+                    <Link target={username ? "_blank" : ""} href={`/${!username ? "username" : username}`} className={cn(primaryClass, active.includes("Visit") && activeClass)}>View</Link>
                 </div>
             ) : (
                 <div className="flex gap-2 items-center">

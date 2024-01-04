@@ -8,6 +8,12 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+export async function generateMetadata({ params }) {
+    return {
+        title: "Profile",
+    }
+}
+
 export default async function Page() {
     const { imageUrl, emailAddresses, firstName, lastName } = await currentUser();
 

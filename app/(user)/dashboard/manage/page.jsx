@@ -9,6 +9,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import ManageForm from "../../_components/ManageForm";
 
+export async function generateMetadata({ params }) {
+    return {
+        title: "Manage",
+    }
+}
+
 export default async function Page() {
     const { imageUrl, emailAddresses, firstName, lastName } = await currentUser();
     return (
