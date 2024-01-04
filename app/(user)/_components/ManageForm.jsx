@@ -8,6 +8,7 @@ import { LoaderIcon } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useToast } from "@/components/ui/use-toast"
 import { Skeleton } from "@/components/ui/skeleton"
+import Link from "next/link"
 
 export default function ManageForm() {
     const { toast } = useToast();
@@ -27,10 +28,10 @@ export default function ManageForm() {
     const handlePublishEvent = async (e) => {
         setIsPublished(true);
         e.preventDefault();
-        if(username.length < 5){
+        if (username.length < 5) {
             toast({
-               title:"Username length is less than 5, please make it longer!"
-           });
+                title: "Username length is less than 5, please make it longer!"
+            });
             setIsPublished(false);
             return;
         }
@@ -44,15 +45,15 @@ export default function ManageForm() {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if(data.error){
+                if (data.error) {
                     toast({
-                        title:"Username is already in use"
+                        title: "Username is already in use"
                     })
                 }
-                else{
+                else {
                     toast({
-                       title: "Successfully published your profile",
-                   });
+                        title: "Successfully published your profile",
+                    });
                 }
             });
 
@@ -93,7 +94,7 @@ export default function ManageForm() {
 
                     <Label htmlFor="youtube" className="mt-8">YouTube</Label>
                     <Input value={youtube} onChange={(e) => setYoutube(e.target.value)} disabled={isEdit} id="youtube" type="text" placeholder="https://youtube.com/channel" />
-                    
+
                     <Label htmlFor="insta" className="mt-2">Instagram</Label>
                     <Input value={insta} onChange={(e) => setInsta(e.target.value)} disabled={isEdit} id="insta" type="text" placeholder="https://instagram.com/username" />
 
@@ -108,6 +109,11 @@ export default function ManageForm() {
                         <Button type="button" className="w-full" variant="outline" onClick={() => setIsEdit(!isEdit)}>{isEdit ? "Edit" : "Cancel"}</Button>
                         <Button className="w-full" type="submit">{isPublished ? (<LoaderIcon className="w-4 h-4 animate-spin" />) : "Publish"}</Button>
                     </div>
+                    {username && (
+                        <div className="mt-5 flex gap-2">
+                            <Button className="w-full mx-auto" asChild><Link href={`/${username}`}>View Your Page</Link></Button>
+                        </div>
+                    )}
                 </div>
             )}
 

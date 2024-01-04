@@ -9,7 +9,7 @@ export default async function Hero() {
     const user = await currentUser();
     return (
         <div className="py-20 px-5 md:px-20 lg:px-32 grid">
-            <div className="border mb-4 w-fit mx-auto p-2 px-4 rounded-full">
+            <div className="border mb-4 w-fit mx-auto p-2 px-4 rounded-full bg-background">
                 <p className="text-xs flex items-center justify-center">
                    ✨ Contribute to this project on <a className="hover:text-primary hover:underline flex items-center justify-center gap-1 ml-1" href="https://github.com/r2hu1/mysocials">GitHub <ArrowRight className="h-4 w-4"/></a>
                 </p>

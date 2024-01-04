@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator"
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import ManageForm from "../../_components/ManageForm";
+import Link from "next/link";
 
 export async function generateMetadata({ params }) {
     return {
@@ -30,7 +31,7 @@ export default async function Page() {
                             alt="Profile image"
                         />
                         <Label>Profile Image</Label>
-                        <p className="text-xs">In order to edit profile image visit <a href="/dashboard/manage" className="text-primary hover:underline">Manage</a><span className="text-red-600"> *</span></p>
+                        <p className="text-xs">In order to edit profile image visit <Link href="/user-profile/profile" className="text-primary hover:underline">Manage</Link><span className="text-red-600"> *</span></p>
                     </div>
                     <ManageForm/>
                 </div>

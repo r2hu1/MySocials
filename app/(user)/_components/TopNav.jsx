@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function TopNav({ active = [], showBack = false, link }) {
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
     const [username, setUsername] = useState('');
 
     useEffect(() => {
@@ -30,11 +30,11 @@ export default function TopNav({ active = [], showBack = false, link }) {
     return (
         <div className="md:px-20 lg:px-32 py-3 px-6">
             {show ? (
-                <div className="flex gap-2 items-center">
+                <div className="flex flex-wrap gap-2 items-center">
                     <Link href="/dashboard/profile" className={cn(primaryClass, active.includes("Profile") && activeClass)}>Profile</Link>
                     <Link href="/dashboard/manage" className={cn(primaryClass, active.includes("Edit") && activeClass)}>{!username ? "Publish Your Page" : "Manage Page"}</Link>
                     {username && (
-                        <Link target={username ? "_blank" : ""} href={`/${!username ? "username" : username}`} className={cn(primaryClass, active.includes("Visit") && activeClass)}>View</Link>
+                        <Link target={username ? "_blank" : ""} href={`/${!username ? "username" : username}`} className={cn(primaryClass, active.includes("Visit") && activeClass)}>Your Page</Link>
                     )}
                 </div>
             ) : (

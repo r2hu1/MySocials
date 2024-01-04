@@ -1,6 +1,7 @@
 "use client"
 
 import Logo from "@/components/Logo";
+import { ModeToggle } from "@/components/ModeToggle";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Facebook, Github, Instagram, Share, Share2, Youtube } from "lucide-react";
@@ -51,6 +52,9 @@ export default function UserSocials({ userDataName }) {
 
     return (
         <div className="px-2 md:px-20 lg:px-32 py-20 grid place-content-center">
+            <div className=" w-12 h-12 rounded-full flex items-center justify-center fixed top-5 left-5 md:top-10 md:left-32 cursor-pointer">
+                <ModeToggle/>
+            </div>
             <div onClick={() => { navigator.share({ url: location.href, title: name, text: name }) }} className="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center fixed top-5 right-5 md:top-10 md:right-32 cursor-pointer hover:scale-95 transition backdrop-blur-3xl">
                 <Share2 className="w-5 h-5" />
             </div>
