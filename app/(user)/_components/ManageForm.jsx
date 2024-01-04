@@ -31,6 +31,7 @@ export default function ManageForm() {
             toast({
                title:"Username length is less than 5, please make it longer!"
            });
+            setIsPublished(false);
             return;
         }
         await fetch("/api/create", {
