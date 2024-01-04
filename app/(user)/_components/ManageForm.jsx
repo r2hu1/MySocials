@@ -93,16 +93,16 @@ export default function ManageForm() {
                     <Textarea value={bio} onChange={(e) => setBio(e.target.value)} disabled={isEdit} id="bio" placeholder="Tell others about yourself"></Textarea>
 
                     <Label htmlFor="youtube" className="mt-8">YouTube</Label>
-                    <Input value={youtube} onChange={(e) => setYoutube(e.target.value)} disabled={isEdit} id="youtube" type="text" placeholder="https://youtube.com/channel" />
+                    <Input value={youtube} onChange={(e) => setYoutube(e.target.value)} disabled={isEdit} id="youtube" type="url" placeholder="https://youtube.com/channel" />
 
                     <Label htmlFor="insta" className="mt-2">Instagram</Label>
-                    <Input value={insta} onChange={(e) => setInsta(e.target.value)} disabled={isEdit} id="insta" type="text" placeholder="https://instagram.com/username" />
+                    <Input value={insta} onChange={(e) => setInsta(e.target.value)} disabled={isEdit} id="insta" type="url" placeholder="https://instagram.com/username" />
 
                     <Label htmlFor="face" className="mt-2">Facebook</Label>
-                    <Input value={face} onChange={(e) => setFace(e.target.value)} disabled={isEdit} id="face" type="text" placeholder="https://facebook.com/username" />
+                    <Input value={face} onChange={(e) => setFace(e.target.value)} disabled={isEdit} id="face" type="url" placeholder="https://facebook.com/username" />
 
                     <Label htmlFor="github" className="mt-2">Github</Label>
-                    <Input value={github} onChange={(e) => setGithub(e.target.value)} disabled={isEdit} id="github" type="text" placeholder="https://github.com/username" />
+                    <Input value={github} onChange={(e) => setGithub(e.target.value)} disabled={isEdit} id="github" type="url" placeholder="https://github.com/username" />
 
 
                     <div className="flex gap-2 mt-8">
