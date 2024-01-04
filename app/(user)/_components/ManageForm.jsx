@@ -27,8 +27,12 @@ export default function ManageForm() {
     const handlePublishEvent = async (e) => {
         setIsPublished(true);
         e.preventDefault();
-        // setIsEdit(true);
-
+        if(username.length < 5){
+            toast({
+               title:"Username length is less than 5, please make it longer!"
+           });
+            return;
+        }
         await fetch("/api/create", {
             method: "POST",
             headers: {
