@@ -27,7 +27,7 @@ export default function ManageForm() {
     const handlePublishEvent = async (e) => {
         setIsPublished(true);
         e.preventDefault();
-        setIsEdit(true);
+        // setIsEdit(true);
 
         await fetch("/api/create", {
             method: "POST",
@@ -37,12 +37,21 @@ export default function ManageForm() {
             body: JSON.stringify({ username, bio, insta, face, github, youtube, name }),
         })
             .then(res => res.json())
-            .then(data => console.log(data));
+            .then(data => {
+                console.log(data);
+                if(data.error){
+                    toast({
+                        title:"Username is already in use"
+                    })
+                }
+                else{
+                    toast({
+                       title: "Successfully published your profile",
+                   });
+                }
+            });
 
         setIsPublished(false);
-        toast({
-            title: "Successfully Published Your Profile",
-        });
     };
 
     useEffect(() => {
