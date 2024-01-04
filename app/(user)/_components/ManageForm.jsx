@@ -91,7 +91,10 @@ export default function ManageForm() {
                     <Label htmlFor="bio" className="mt-2">Bio</Label>
                     <Textarea value={bio} onChange={(e) => setBio(e.target.value)} disabled={isEdit} id="bio" placeholder="Tell others about yourself"></Textarea>
 
-                    <Label htmlFor="insta" className="mt-8">Instagram</Label>
+                    <Label htmlFor="youtube" className="mt-8">YouTube</Label>
+                    <Input value={youtube} onChange={(e) => setYoutube(e.target.value)} disabled={isEdit} id="youtube" type="text" placeholder="https://youtube.com/channel" />
+                    
+                    <Label htmlFor="insta" className="mt-2">Instagram</Label>
                     <Input value={insta} onChange={(e) => setInsta(e.target.value)} disabled={isEdit} id="insta" type="text" placeholder="https://instagram.com/username" />
 
                     <Label htmlFor="face" className="mt-2">Facebook</Label>
@@ -100,8 +103,6 @@ export default function ManageForm() {
                     <Label htmlFor="github" className="mt-2">Github</Label>
                     <Input value={github} onChange={(e) => setGithub(e.target.value)} disabled={isEdit} id="github" type="text" placeholder="https://github.com/username" />
 
-                    <Label htmlFor="youtube" className="mt-2">YouTube</Label>
-                    <Input value={youtube} onChange={(e) => setYoutube(e.target.value)} disabled={isEdit} id="youtube" type="text" placeholder="https://youtube.com/channel" />
 
                     <div className="flex gap-2 mt-8">
                         <Button type="button" className="w-full" variant="outline" onClick={() => setIsEdit(!isEdit)}>{isEdit ? "Edit" : "Cancel"}</Button>
@@ -112,25 +113,25 @@ export default function ManageForm() {
 
             {loding && (
                 <div className="grid gap-2 mt-5">
-                    <Skeleton className="h-5 w-20" />
+                    <Skeleton className="h-5 w-20 mt-2" />
+                    <Skeleton className="h-10 w-full" />
+
+                    <Skeleton className="h-5 w-20 mt-2" />
                     <Skeleton className="h-10 w-full" />
 
                     <Skeleton className="h-5 w-20" />
+                    <Skeleton className="h-20 w-full mb-8" />
+
+                    <Skeleton className="h-5 w-20 mt-2" />
                     <Skeleton className="h-10 w-full" />
 
-                    <Skeleton className="h-5 w-20" />
+                    <Skeleton className="h-5 w-20 mt-2" />
                     <Skeleton className="h-10 w-full" />
 
-                    <Skeleton className="h-5 w-20" />
+                    <Skeleton className="h-5 w-20 mt-2" />
                     <Skeleton className="h-10 w-full" />
 
-                    <Skeleton className="h-5 w-20" />
-                    <Skeleton className="h-10 w-full" />
-
-                    <Skeleton className="h-5 w-20" />
-                    <Skeleton className="h-10 w-full" />
-
-                    <Skeleton className="h-5 w-20" />
+                    <Skeleton className="h-5 w-20 mt-2" />
                     <Skeleton className="h-10 w-full" />
 
                     <div className="flex gap-2 mt-8">
