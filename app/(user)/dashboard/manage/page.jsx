@@ -1,12 +1,6 @@
-import Footer from "@/components/Footer";
-import Header from "../../_components/Header";
 import TopNav from "../../_components/TopNav";
 import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { currentUser } from "@clerk/nextjs";
-import { Separator } from "@/components/ui/separator"
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import ManageForm from "../../_components/ManageForm";
 import Link from "next/link";
 
@@ -20,7 +14,6 @@ export default async function Page() {
     const { imageUrl, emailAddresses, firstName, lastName } = await currentUser();
     return (
         <div>
-            <Header />
             <TopNav active={["Edit"]} link="" />
             <div className="py-10 px-7 md:px-20 lg:px-32 mb-14">
                 <div>
@@ -36,7 +29,6 @@ export default async function Page() {
                     <ManageForm/>
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

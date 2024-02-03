@@ -26,24 +26,14 @@ export default function TopNav({ active = [], showBack = false, link }) {
     });
 
     const activeClass = "bg-primary text-white";
-    const primaryClass = "h-10 px-4 rounded-full bg-secondary hover:bg-primary hover:text-white transition flex items-center justify-center text-sm"
+    const primaryClass = "h-10 px-4 rounded-full dark:border-none border bg-secondary hover:bg-primary hover:text-white transition flex items-center justify-center text-sm"
     return (
         <div className="md:px-20 lg:px-32 py-3 px-6">
-            {show ? (
-                <div className="flex flex-wrap gap-2 items-center">
-                    <Link href="/dashboard/profile" className={cn(primaryClass, active.includes("Profile") && activeClass)}>Profile</Link>
-                    <Link href="/dashboard/manage" className={cn(primaryClass, active.includes("Edit") && activeClass)}>{!username ? "Publish Your Page" : "Manage Page"}</Link>
-                    {username && (
-                        <Link target={username ? "_blank" : ""} href={`/${!username ? "username" : username}`} className={cn(primaryClass, active.includes("Visit") && activeClass)}>Your Page</Link>
-                    )}
-                </div>
-            ) : (
-                <div className="flex gap-2 items-center">
-                    <Skeleton className="w-[75px] h-10 rounded-full" />
-                    <Skeleton className="w-32 h-10 rounded-full" />
-                    <Skeleton className="w-[68px] h-10 rounded-full" />
-                </div>
-            )}
+            <div className="flex flex-wrap gap-2 items-center">
+                <Link href="/dashboard/profile" className={cn(primaryClass, active.includes("Profile") && activeClass)}>Profile</Link>
+                <Link href="/dashboard/manage" className={cn(primaryClass, active.includes("Edit") && activeClass)}>Manage Page</Link>
+                <Link target={username ? "_blank" : ""} href={`/${!username ? "#" : username}`} className={cn(primaryClass, active.includes("Visit") && activeClass)}>Your Page</Link>
+            </div>
         </div>
     )
 }

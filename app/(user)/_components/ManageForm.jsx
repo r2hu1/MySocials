@@ -106,14 +106,9 @@ export default function ManageForm() {
 
 
                     <div className="flex gap-2 mt-8">
-                        <Button type="button" className="w-full" variant="outline" onClick={() => setIsEdit(!isEdit)}>{isEdit ? "Edit" : "Cancel"}</Button>
+                        <Button type="button" className="w-full max-w-[100px]" variant="outline" onClick={() => setIsEdit(!isEdit)}>{isEdit ? "Edit" : "Cancel"}</Button>
                         <Button className="w-full" type="submit">{isPublished ? (<LoaderIcon className="w-4 h-4 animate-spin" />) : "Publish"}</Button>
                     </div>
-                    {username && (
-                        <div className="mt-5 flex gap-2">
-                            <Button className="w-full mx-auto" asChild><Link href={`/${username}`}>View Your Page</Link></Button>
-                        </div>
-                    )}
                 </div>
             )}
 

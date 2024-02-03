@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer";
-import Header from "../../_components/Header";
 import TopNav from "../../_components/TopNav";
 import { Input } from "@/components/ui/input";
 import { ClerkLoaded, ClerkLoading, currentUser } from "@clerk/nextjs";
@@ -19,7 +17,6 @@ export default async function Page() {
 
     return (
         <div>
-            <Header />
             <TopNav active={["Profile"]} link="" />
 
             <div className="py-10 px-7 md:px-20 lg:px-32 mb-14">
@@ -36,16 +33,16 @@ export default async function Page() {
                 <ClerkLoaded>
                     <div className="grid gap-2 mt-5 lg:px-40">
                         <Label htmlFor="firstName" className="mt-3">First Name</Label>
-                        <Input id="firstName" value={firstName} readonly />
+                        <Input disabled id="firstName" value={firstName} readonly />
 
                         <Label htmlFor="lname" className="mt-3">Last Name</Label>
-                        <Input id="lname" value={lastName || "Update Lastname From Google Account"} readonly />
+                        <Input disabled id="lname" value={lastName || "Update Lastname From Google Account"} readonly />
 
                         <Label htmlFor="email" className="mt-3">Email</Label>
-                        <Input id="email" value={emailAddresses[0].emailAddress} readonly />
+                        <Input disabled id="email" value={emailAddresses[0].emailAddress} readonly />
                     </div>
                     <div className="mt-5 grid gap-2 lg:px-40">
-                        <Button disabled>Edit</Button>
+                        <Button asChild><Link href="/user-profile">Edit</Link></Button>
                         <p className="text-xs text-center">To edit your profile visit <Link href="/user-profile/profile" className="text-primary hover:underline">User Profile</Link><span className="text-red-600"> *</span></p>
                     </div>
                 </ClerkLoaded>
@@ -66,9 +63,12 @@ export default async function Page() {
                         <Skeleton className="h-5 w-24 mt-3" />
                         <Skeleton className="h-10 w-full" />
                     </div>
+                    <div className="mt-5 grid gap-2 lg:px-40">
+                        <Skeleton className="h-10 w-full mt-3" />
+                        <Skeleton className="h-4 mx-auto w-full max-w-[250px]" />
+                    </div>
                 </ClerkLoading>
             </div>
-            <Footer />
         </div>
     )
 }
