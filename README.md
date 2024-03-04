@@ -32,7 +32,9 @@ To run this project locally, follow these steps:
 1. Clone the repository: `git clone https://github.com/r2hu1/mysocials.git`
 2. Install dependencies: `npm install`
 3. Set up MongoDB and configure the connection string in the application.
-4. Start the development server: `npm run dev`
+4. Create a `.env.local` file
+5. Add mongodb and clerk's environment variables
+7. Start the development server: `npm run dev`
 
 ## Usage
 
