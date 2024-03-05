@@ -3,12 +3,12 @@
 MySocials is an open-source link-in-bio tool designed to simplify the management of social media links. Built with Next.js, Shadcn, and MongoDB, this project provides a seamless way to share multiple links using a single landing page.
 
 ## Preview
-Homepage
+
+- Homepage
 
 ![MySocials Preview](/public/homepage.png)
 
-<br/>
-User Page
+- User Page
 
 ![MySocials Preview](/public/demo.png)
 
