@@ -52,7 +52,7 @@ export default function UserSocials({ userDataName }) {
 
     return (
         <div className="relative overflow-x-hidden px-6 md:px-20 lg:px-32 py-20 grid place-content-center">
-            <div class="absolute top-0 z-[-2] h-screen w-screen dark:bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+            <div className="absolute top-0 z-[-2] h-screen w-screen dark:bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
             <div onClick={() => { navigator.share({ url: location.href, title: name, text: name }) }} className="fixed top-5 right-5 md:top-10 md:right-32">
                 <Button variant="pulseBtn" className="w-10 h-10 rounded-full p-0 flex items-center justify-center"><Share2 className="w-4 h-4" /></Button>
             </div>
