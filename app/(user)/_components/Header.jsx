@@ -23,7 +23,7 @@ export default async function Header() {
             <div className="flex gap-2 items-center">
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <div className="flex items-center gap-1.5 bg-secondary hover:bg-secondary/80 cursor-pointer px-2 py-1 rounded-full">
+                        <div className="flex items-center gap-1.5 bg-secondary/60 hover:bg-secondary/80 cursor-pointer px-2 py-1 rounded-full">
                             <Menu className="h-4 w-4" />
                             <UserButton afterSignOutUrl="/" />
                             <ClerkLoading className="flex gap-3 items-center">
