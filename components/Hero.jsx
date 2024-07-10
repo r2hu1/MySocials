@@ -24,7 +24,7 @@ export default async function Hero() {
                 <Button asChild variant="pulseBtn"><Link href={!user ? "/sign-in" : "/dashboard/profile"}>Get Started</Link></Button>
                 <Button variant="outline" asChild><Link href="/r2hu1" className="flex items-center gap-1">Demo <ArrowRight className="h-4 w-4 -rotate-45" /></Link></Button>
             </div>
-            <div className="mt-20 bg-secondary p-1 rounded-lg w-fit mx-auto">
+            <div className="mt-20 bg-secondary/40 p-1 rounded-md w-fit mx-auto">
                 <DemoImage />
             </div>
         </div>
