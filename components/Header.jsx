@@ -6,12 +6,12 @@ import Logo from "./Logo";
 export default async function Header() {
     const user = await currentUser();
     return (
-        <header className="flex justify-between items-center py-[22px] px-5 md:px-20 lg:px-32">
+        <header className="flex justify-between items-center py-5 px-6 md:px-20">
             <div>
                 <Logo />
             </div>
             <div className="flex gap-3 items-center">
-                <Button asChild><Link href={!user ? "/sign-in" : "/dashboard/profile"}>{!user ? "Login" : "Dashboard"}</Link></Button>
+                <Button asChild variant="pulseBtn"><Link href={!user ? "/sign-in" : "/dashboard/profile"}>{!user ? "Login" : "Dashboard"}</Link></Button>
             </div>
         </header>
     )
