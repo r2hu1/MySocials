@@ -4,11 +4,11 @@ import { ModeToggle } from "./ModeToggle";
 
 export default function Footer() {
     return (
-        <footer className="px-8 md:px-20 lg:px-32 py-10 grid gap-4">
+        <footer className="px-8 md:px-20 lg:px-32 py-5 mt-3 grid gap-4">
             <div className="flex justify-between">
                 <div>
                     <Logo />
-                    <p className="text-xs">Built by <a href="https://github.com/r2hu1" className="hover:text-primary hover:underline">r2hu1</a> avilable on <a className="hover:text-primary hover:underline" href="https://github.com/r2hu1/mysocials">github</a>.</p>
+                    <p className="text-xs">Built by <a href="https://github.com/r2hu1" className="hover:text-primary hover:underline">r2hu1</a> codebase on <a className="hover:text-primary hover:underline" href="https://github.com/r2hu1/mysocials">github</a></p>
                 </div>
                 <div>
                     <ModeToggle/>
