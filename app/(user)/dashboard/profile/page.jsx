@@ -1,4 +1,3 @@
-import TopNav from "../../_components/TopNav";
 import { Input } from "@/components/ui/input";
 import { ClerkLoaded, ClerkLoading, currentUser } from "@clerk/nextjs";
 import { Label } from "@/components/ui/label";
@@ -17,9 +16,7 @@ export default async function Page() {
 
     return (
         <div>
-            <TopNav active={["Profile"]} link="" />
-
-            <div className="py-10 px-7 md:px-20 lg:px-32 mb-14">
+            <div className="py-8 px-7 md:px-20 lg:px-32 mb-14">
                 <ClerkLoaded>
                     <div className="flex flex-col items-center justify-center gap-2 mt-10">
                         <img

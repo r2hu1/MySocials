@@ -1,4 +1,3 @@
-import TopNav from "../../_components/TopNav";
 import { Label } from "@/components/ui/label";
 import { currentUser } from "@clerk/nextjs";
 import ManageForm from "../../_components/ManageForm";
@@ -14,8 +13,7 @@ export default async function Page() {
     const { imageUrl, emailAddresses, firstName, lastName } = await currentUser();
     return (
         <div>
-            <TopNav active={["Edit"]} link="" />
-            <div className="py-10 px-7 md:px-20 lg:px-32 mb-14">
+            <div className="py-8 px-7 md:px-20 lg:px-32 mb-14">
                 <div>
                     <div className="flex flex-col items-center justify-center gap-2 mt-10">
                         <img
