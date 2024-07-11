@@ -2,6 +2,8 @@ import { Label } from "@/components/ui/label";
 import { currentUser } from "@clerk/nextjs";
 import ManageForm from "../../_components/ManageForm";
 import Link from "next/link";
+import UserPageLink from "../../_components/UserPageLink";
+
 
 export async function generateMetadata({ params }) {
     return {
@@ -13,7 +15,8 @@ export default async function Page() {
     const { imageUrl, emailAddresses, firstName, lastName } = await currentUser();
     return (
         <div>
-            <div className="py-8 px-7 md:px-20 lg:px-32 mb-14">
+            <UserPageLink/>
+            <div className="py-5 px-6 md:px-20 lg:px-32 mb-16">
                 <div>
                     <div className="flex flex-col items-center justify-center gap-2 mt-10">
                         <img
@@ -22,9 +25,9 @@ export default async function Page() {
                             alt="Profile image"
                         />
                         <Label>Profile Image</Label>
-                        <p className="text-xs">In order to edit profile image visit <Link href="/user-profile/profile" className="text-primary hover:underline">Manage</Link><span className="text-red-600"> *</span></p>
+                        <p className="text-xs">to change profile picture <Link href="/user-profile/profile" className="text-primary hover:underline">click here</Link><span className="text-red-600">*</span></p>
                     </div>
-                    <ManageForm/>
+                    <ManageForm />
                 </div>
             </div>
         </div>

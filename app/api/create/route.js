@@ -11,7 +11,7 @@ export async function POST(request) {
         await mongoose.connect(process.env.NEXT_MONGO_URI);
 
         if (!username) {
-            return NextResponse.json({ error: "Please provide a username" }, { status: 400 });
+            return NextResponse.json({ error: "Please enter valid username" }, { status: 400 });
         }
 
         if (await User.findOne({ username })) {
