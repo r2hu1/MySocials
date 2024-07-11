@@ -54,7 +54,9 @@ export default function ManageForm() {
                     toast({
                         title: "Successfully published your profile",
                     });
-                    location.reload();
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000)
                 }
             });
 
@@ -68,6 +70,7 @@ export default function ManageForm() {
                 .then(data => {
                     setLoding(false);
                     if (data.data !== null) {
+                        console.log(data)
                         setName(data.data.name);
                         setUsername(data.data.username);
                         setBio(data.data.bio);
@@ -106,7 +109,7 @@ export default function ManageForm() {
                     <Input value={github} onChange={(e) => setGithub(e.target.value)} id="github" type="url" placeholder="https://github.com/username" />
 
 
-                    <div className="flex gap-2 mt-5">
+                    <div className="grid mt-5">
                         <Button className="w-full" type="submit">{isPublished ? (<LoaderIcon className="w-4 h-4 animate-spin" />) : "Publish"}</Button>
                     </div>
                 </div>
