@@ -85,16 +85,16 @@ export default function UserSocials({ userDataName }) {
             {!loding && (
                 <div className="grid relative gap-3 grid-cols-1 max-w-[600px]">
                     {!youtube ? null : (
-                        <Link className="absolute w-full transition md:w-[420px] w-[300px] mx-auto h-14 bg-secondary flex items-center justify-center rounded-lg hover:bg-primary hover:text-white hover:scale-95 relative" target="_blank" href={youtube}><Youtube className="absolute left-6 h-5 w-5" /> My YouTube</Link>
+                        <Link className="w-full transition md:w-[420px] sm:w-[300px] mx-auto h-14 bg-secondary flex items-center justify-center rounded-lg hover:bg-primary hover:text-white hover:scale-95 relative" target="_blank" href={youtube}><Youtube className="absolute left-6 h-5 w-5" /> My YouTube</Link>
                     )}
                     {!insta ? null : (
-                        <Link className="absolute w-full transition md:w-[420px] w-[300px] mx-auto h-14 bg-secondary flex items-center justify-center rounded-lg hover:bg-primary hover:text-white hover:scale-95 relative" target="_blank" href={insta}><Instagram className="absolute left-6 h-5 w-5" /> My Instagram</Link>
+                        <Link className="w-full transition md:w-[420px] sm:w-[300px] mx-auto h-14 bg-secondary flex items-center justify-center rounded-lg hover:bg-primary hover:text-white hover:scale-95 relative" target="_blank" href={insta}><Instagram className="absolute left-6 h-5 w-5" /> My Instagram</Link>
                     )}
                     {!face ? null : (
-                        <Link className="absolute w-full transition md:w-[420px] w-[300px] mx-auto h-14 bg-secondary flex items-center justify-center rounded-lg hover:bg-primary hover:text-white hover:scale-95 relative" target="_blank" href={face}><Facebook className="absolute left-6 h-5 w-5" /> My Facebook</Link>
+                        <Link className="w-full transition md:w-[420px] sm:w-[300px] mx-auto h-14 bg-secondary flex items-center justify-center rounded-lg hover:bg-primary hover:text-white hover:scale-95 relative" target="_blank" href={face}><Facebook className="absolute left-6 h-5 w-5" /> My Facebook</Link>
                     )}
                     {!github ? null : (
-                        <Link className="absolute w-full transition md:w-[420px] w-[300px] mx-auto h-14 bg-secondary flex items-center justify-center rounded-lg hover:bg-primary hover:text-white hover:scale-95 relative" target="_blank" href={github}><Github className="absolute left-6 h-5 w-5" /> My Github</Link>
+                        <Link className="w-full transition md:w-[420px] sm:w-[300px] mx-auto h-14 bg-secondary flex items-center justify-center rounded-lg hover:bg-primary hover:text-white hover:scale-95 relative" target="_blank" href={github}><Github className="absolute left-6 h-5 w-5" /> My Github</Link>
                     )}
                 </div>
             )}
