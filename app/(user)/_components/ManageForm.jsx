@@ -77,7 +77,7 @@ export default function ManageForm() {
                     }
                 });
         }
-    })
+    },[]);
 
     return (
         <form className="grid gap-2 mt-5 lg:px-40" method="post" onSubmit={handlePublishEvent}>
