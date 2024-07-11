@@ -84,29 +84,28 @@ export default function ManageForm() {
             {!loding && (
                 <div className="grid gap-2 mt-5">
                     <Label htmlFor="username" className="mt-2">Username</Label>
-                    <Input value={username} onChange={(e) => setUsername(e.target.value)} disabled={isEdit} id="image" type="text" placeholder="Unique username" />
+                    <Input value={username} onChange={(e) => setUsername(e.target.value)} id="image" type="text" placeholder="Unique username" />
 
                     <Label htmlFor="name" className="mt-2">Full Name</Label>
-                    <Input value={name} onChange={(e) => setName(e.target.value)} disabled={isEdit} id="name" type="text" placeholder="John Doe" />
+                    <Input value={name} onChange={(e) => setName(e.target.value)} id="name" type="text" placeholder="John Doe" />
 
                     <Label htmlFor="bio" className="mt-2">Bio</Label>
-                    <Textarea value={bio} onChange={(e) => setBio(e.target.value)} disabled={isEdit} id="bio" placeholder="Tell others about yourself"></Textarea>
+                    <Textarea value={bio} onChange={(e) => setBio(e.target.value)} id="bio" placeholder="Tell others about yourself"></Textarea>
 
                     <Label htmlFor="youtube" className="mt-8">YouTube</Label>
-                    <Input value={youtube} onChange={(e) => setYoutube(e.target.value)} disabled={isEdit} id="youtube" type="url" placeholder="https://youtube.com/channel" />
+                    <Input value={youtube} onChange={(e) => setYoutube(e.target.value)} id="youtube" type="url" placeholder="https://youtube.com/channel" />
 
                     <Label htmlFor="insta" className="mt-2">Instagram</Label>
-                    <Input value={insta} onChange={(e) => setInsta(e.target.value)} disabled={isEdit} id="insta" type="url" placeholder="https://instagram.com/username" />
+                    <Input value={insta} onChange={(e) => setInsta(e.target.value)} id="insta" type="url" placeholder="https://instagram.com/username" />
 
                     <Label htmlFor="face" className="mt-2">Facebook</Label>
-                    <Input value={face} onChange={(e) => setFace(e.target.value)} disabled={isEdit} id="face" type="url" placeholder="https://facebook.com/username" />
+                    <Input value={face} onChange={(e) => setFace(e.target.value)} id="face" type="url" placeholder="https://facebook.com/username" />
 
                     <Label htmlFor="github" className="mt-2">Github</Label>
-                    <Input value={github} onChange={(e) => setGithub(e.target.value)} disabled={isEdit} id="github" type="url" placeholder="https://github.com/username" />
+                    <Input value={github} onChange={(e) => setGithub(e.target.value)} id="github" type="url" placeholder="https://github.com/username" />
 
 
-                    <div className="flex gap-2 mt-8">
-                        <Button type="button" className="w-full max-w-[100px]" variant="outline" onClick={() => setIsEdit(!isEdit)}>{isEdit ? "Edit" : "Cancel"}</Button>
+                    <div className="flex gap-2 mt-5">
                         <Button className="w-full" type="submit">{isPublished ? (<LoaderIcon className="w-4 h-4 animate-spin" />) : "Publish"}</Button>
                     </div>
                 </div>
