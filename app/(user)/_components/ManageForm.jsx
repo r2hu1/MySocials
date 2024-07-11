@@ -84,7 +84,7 @@ export default function ManageForm() {
             {!loding && (
                 <div className="grid gap-2 mt-5">
                     <Label htmlFor="username" className="mt-2">Username</Label>
-                    <Input value={username} onChange={(e) => setUsername(e.target.value)} id="image" type="text" placeholder="Unique username" />
+                    <Input value={username} onChange={(e) => setUsername(e.target.value.trim().toLowerCase())} id="image" type="text" placeholder="Unique username" />
 
                     <Label htmlFor="name" className="mt-2">Full Name</Label>
                     <Input value={name} onChange={(e) => setName(e.target.value)} id="name" type="text" placeholder="John Doe" />
