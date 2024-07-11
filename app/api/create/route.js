@@ -9,22 +9,46 @@ export async function POST(request) {
     const { username, bio, youtube, insta, face, github, name } = await request.json();
     try {
         await mongoose.connect(process.env.NEXT_MONGO_URI);
-
-        if (!username) {
-            return NextResponse.json({ error: "Please enter valid username" }, { status: 400 });
-        }
-
-        if (await User.findOne({ username })) {
-            let userData = await User.findOne({ username });
-            if (userData.email != email) {
-                return NextResponse.json({ error: "Username already exists" }, { status: 400 });
+        const findCurrentUser = await User.findOne({ email });
+        if (findCurrentUser) {
+            const getSimilarUsername = await User.findOne({ username: username });
+            if (getSimilarUsername.email != email) {
+                return NextResponse.json({ error: "Username is already in use" }, { status: 500 });
             }
-            let data1 = await User.findOneAndUpdate({ username }, { "name": name, "email": email, "username": username, "bio": bio, "youtube": youtube, "instagram": insta, "facebook": face, "github": github, "image": imageUrl });
-            return NextResponse.json({ "message": "success", data1 }, { status: 200 });
+            else {
+                const findAndUpdateCurrentUser = await User.findOneAndUpdate({ email }, {
+                    name: name,
+                    username: username,
+                    bio: bio,
+                    youtube: youtube,
+                    instagram: insta,
+                    facebook: face,
+                    github: github,
+                    image: imageUrl
+                });
+                return NextResponse.json({ "message": "success", name, username, bio, youtube, insta, face, github }, { status: 200 });
+            }
         }
-
-        const newUser = await User.create({ "name": name, "email": email, "username": username, "bio": bio, "youtube": youtube, "instagram": insta, "facebook": face, "github": github, "image": imageUrl });
-        return NextResponse.json({ "message": "success", name, username, bio, youtube, insta, face, github }, { status: 200 });
+        else {
+            const getSimilarUsername = await User.findOne({ username: username });
+            if (getSimilarUsername.email != email) {
+                return NextResponse.json({ error: "Username is already in use" }, { status: 500 });
+            }
+            else {
+                const makeNewUser = await User.create({
+                    name: name,
+                    username: username,
+                    email: email,
+                    bio: bio,
+                    youtube: youtube,
+                    instagram: insta,
+                    facebook: face,
+                    github: github,
+                    image: imageUrl
+                });
+                return NextResponse.json({ "message": "success", name, username, bio, youtube, insta, face, github }, { status: 200 });
+            }
+        }
     }
     catch (error) {
         return NextResponse.json({ error: error.message }, { status: 500 });

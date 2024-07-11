@@ -44,7 +44,7 @@ export default function ManageForm() {
                 console.log(data);
                 if (data.error) {
                     toast({
-                        title: "Username is already in use"
+                        title: data.error
                     })
                 }
                 else {
@@ -107,7 +107,7 @@ export default function ManageForm() {
 
 
                     <div className="grid mt-5">
-                        <Button className="w-full" type="submit">{isPublished ? (<LoaderIcon className="w-4 h-4 animate-spin" />) : "Publish"}</Button>
+                        <Button className="w-full" type="submit" disabled={isPublished}>{isPublished ? (<LoaderIcon className="w-4 h-4 animate-spin" />) : "Publish"}</Button>
                     </div>
                 </div>
             )}
