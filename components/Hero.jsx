@@ -21,7 +21,7 @@ export default async function Hero() {
                 <p className="md:text-base text-[13.5px] max-w-sm md:max-w-xl sm:text-center sm:mx-auto dark:text-gray-400 text-gray-600">Simplify and elevate your online presence effortlessly with MySocials, where one link connects to endless opportunities.</p>
             </div>
             <div className="sm:flex items-center sm:justify-center grid grid-cols-2 gap-2.5 mt-7">
-                <Button asChild variant="pulseBtn"><Link href={!user ? "/sign-in" : "/dashboard/profile"}>Get Started</Link></Button>
+                <Button asChild variant="pulseBtn"><Link href={!user ? "/sign-in" : "/dashboard/manage"}>Get Started</Link></Button>
                 <Button variant="outline" asChild><Link href="/r2hu1" className="flex items-center gap-1">Demo <ArrowRight className="h-4 w-4 -rotate-45" /></Link></Button>
             </div>
             <div className="mt-20 bg-secondary/40 p-1 rounded-md w-fit mx-auto">
