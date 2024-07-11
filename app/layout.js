@@ -22,14 +22,8 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body className={poppins.className}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <NextTopLoader
-              color="#e11d48"
+           <NextTopLoader
+              color="hsl(229 100% 62%)"
               initialPosition={0.08}
               crawlSpeed={200}
               height={3}
@@ -37,11 +31,17 @@ export default function RootLayout({ children }) {
               showSpinner={false}
               easing="ease"
               speed={200}
-              shadow="0 0 0px #e11d48,0 0 0px #e11d48"
+              shadow="0 0 0px hsl(229 100% 62%),0 0 0px hsl(229 100% 62%)"
               template='<div className="bar" role="bar"><div className="peg"></div></div><div className="spinner" role="spinner"><div className="spinner-icon"></div></div>'
               zIndex={1600}
               showAtBottom={false}
             />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
             {children}
             <Toaster />
           </ThemeProvider>
