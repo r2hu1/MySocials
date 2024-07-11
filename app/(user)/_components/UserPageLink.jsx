@@ -26,9 +26,9 @@ export default function UserPageLink() {
     });
 
     return (
-        <div className="px-6 sm:mx-auto sm:max-w-max">
+        <div className="px-6 md:px-20 lg:px-32">
             {!username ? (
-                <Alert className="sm:max-w-2xl">
+                <Alert>
                     <AlertTitle className="text-base"><span>✨</span> Heads up <span>✨</span></AlertTitle>
                     <AlertDescription className="text-sm text-gray-600 dark:text-gray-400">
                         Scroll down to publish your page to get your personalized page link!
@@ -36,7 +36,7 @@ export default function UserPageLink() {
                 </Alert>
             ) : (
                 <div>
-                  <Alert className="sm:max-w-lg">
+                  <Alert>
                     <AlertTitle className="text-base"><span>✨</span> Your page is ready <span>✨</span></AlertTitle>
                     <AlertDescription className="text-sm text-gray-600 dark:text-gray-400 hover:underline">
                         <Link target="_blank" href={`https://${location.host}/${username}`}>https://{location.host}/{username}</Link>

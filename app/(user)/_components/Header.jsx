@@ -1,3 +1,4 @@
+"use server"
 import { ClerkLoading, SignOutButton, UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/Logo";
@@ -14,7 +15,7 @@ export default async function Header() {
                 <ClerkLoading>
                     <Skeleton className="h-10 w-[90px] rounded" />
                 </ClerkLoading>
-                <SignOutButton redirectUrl="/">
+                <SignOutButton>
                     <Button>Logout</Button>
                 </SignOutButton>
                 <ModeToggle />
