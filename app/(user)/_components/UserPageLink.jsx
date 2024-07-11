@@ -26,9 +26,9 @@ export default function UserPageLink() {
     });
 
     return (
-        <div className="px-6 sm:mx-auto sm:w-fit">
+        <div className="px-6 sm:mx-auto sm:max-w-max">
             {!username ? (
-                <Alert className="sm:max-w-lg">
+                <Alert className="sm:max-w-2xl">
                     <AlertTitle className="text-base"><span>✨</span> Heads up <span>✨</span></AlertTitle>
                     <AlertDescription className="text-sm text-gray-600 dark:text-gray-400">
                         Scroll down to publish your page to get your personalized page link!
