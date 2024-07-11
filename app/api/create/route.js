@@ -8,7 +8,6 @@ export async function POST(request) {
     
     const { emailAddresses, imageUrl } = await currentUser();
     const email = emailAddresses[0].emailAddress;
-    console.log(email);
 
     const { username, bio, youtube, insta, face, github, name } = await request.json();
 
@@ -45,7 +44,8 @@ export async function POST(request) {
                 instagram: insta,
                 facebook: face,
                 github: github,
-                image: imageUrl
+                image: imageUrl,
+                email:email
             });
             return NextResponse.json({ message: "success", name, username, bio, youtube, insta, face, github }, { status: 200 });
         }
