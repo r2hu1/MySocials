@@ -13,7 +13,7 @@ export default async function Header() {
             </div>
             <div className="flex items-center gap-3">
                 <ClerkLoading>
-                    <Skeleton className="h-10 w-[90px] rounded" />
+                    <Skeleton className="h-10 w-[80px] rounded" />
                 </ClerkLoading>
                 <SignOutButton>
                     <Button>Logout</Button>

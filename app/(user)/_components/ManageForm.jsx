@@ -1,5 +1,4 @@
 "use client"
-
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -8,12 +7,10 @@ import { LoaderIcon } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useToast } from "@/components/ui/use-toast"
 import { Skeleton } from "@/components/ui/skeleton"
-import Link from "next/link"
 
 export default function ManageForm() {
     const { toast } = useToast();
 
-    const [isEdit, setIsEdit] = useState(true);
     const [username, setUsername] = useState('');
     const [bio, setBio] = useState('');
     const [insta, setInsta] = useState('');
@@ -88,13 +85,13 @@ export default function ManageForm() {
             {!loding && (
                 <div className="grid gap-2 mt-5">
                     <Label htmlFor="username" className="mt-2">Username</Label>
-                    <Input value={username} onChange={(e) => setUsername(e.target.value.trim().toLowerCase())} id="image" type="text" placeholder="Unique username" />
+                    <Input value={username} onChange={(e) => setUsername(e.target.value.trim().toLowerCase())} id="image" type="text" placeholder="Unique username" maxLength={10}/>
 
                     <Label htmlFor="name" className="mt-2">Full Name</Label>
-                    <Input value={name} onChange={(e) => setName(e.target.value)} id="name" type="text" placeholder="John Doe" />
+                    <Input value={name} onChange={(e) => setName(e.target.value)} id="name" type="text" placeholder="John Doe" maxLength={40}/>
 
                     <Label htmlFor="bio" className="mt-2">Bio</Label>
-                    <Textarea value={bio} onChange={(e) => setBio(e.target.value)} id="bio" placeholder="Tell others about yourself"></Textarea>
+                    <Textarea value={bio} onChange={(e) => setBio(e.target.value)} id="bio" placeholder="Tell others about yourself" maxLength={500}></Textarea>
 
                     <Label htmlFor="youtube" className="mt-8">YouTube</Label>
                     <Input value={youtube} onChange={(e) => setYoutube(e.target.value)} id="youtube" type="url" placeholder="https://youtube.com/channel" />

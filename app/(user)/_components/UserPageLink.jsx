@@ -16,11 +16,11 @@ export default function UserPageLink() {
                     console.log(data)
                     if (data.data !== null) {
                         setUsername(data.data.username);
-                        setShow(true);
                     }
                     else {
                         setShow(true);
                     }
+                    setShow(true);
                 });
         }
     });
