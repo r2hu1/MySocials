@@ -14,7 +14,7 @@ export default async function Header() {
                 <ClerkLoading>
                     <Skeleton className="h-10 w-[90px] rounded" />
                 </ClerkLoading>
-                <SignOutButton asChild>
+                <SignOutButton redirectUrl="/">
                     <Button>Logout</Button>
                 </SignOutButton>
                 <ModeToggle />
