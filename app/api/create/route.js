@@ -52,7 +52,10 @@ export async function POST(request) {
     const findCurrentUser = await User.findOne({ email: email });
 
     const getSimilarUsername = await User.findOne({ username: username });
-    if (getSimilarUsername && getSimilarUsername.email !== email) {
+    if (
+      getSimilarUsername &&
+      getSimilarUsername.email !== findCurrentUser.email
+    ) {
       console.log(getSimilarUsername.email);
       return NextResponse.json(
         { error: "Username is already in use" },

@@ -48,12 +48,19 @@ export default async function Hero() {
         </Button>
         <Button variant="outline" asChild>
           <Link
-            href="https://www.linkmee.xyz/awkwardpy"
+            href="https://mysocialz.vercel.app/r2hu1"
             className="flex items-center gap-1"
           >
             Preview <ArrowRight className="h-4 w-4 -rotate-45" />
           </Link>
         </Button>
+      </div>
+      <div className="mt-32 w-fit h-fit border-primary/10 border-2 rounded-lg">
+        <img
+          className="rounded-lg"
+          src="/assets/homepage-dark.png"
+          alt="Preview"
+        />
       </div>
     </div>
   );

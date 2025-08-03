@@ -6,11 +6,11 @@ MySocials is an open-source link-in-bio tool designed to simplify the management
 
 - Homepage
 
-![MySocials Preview](/public/homepage.png)
+![MySocials Preview](/public/assets/preview.png)
 
 - User Page
 
-![MySocials Preview](/public/demo.png)
+![MySocials Preview](/public/assets/homepage-dark.png)
 
 ## Features
 
