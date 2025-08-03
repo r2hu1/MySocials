@@ -31,6 +31,8 @@ import { File } from "lucide-react";
 import { Globe2 } from "lucide-react";
 import { Coffee } from "lucide-react";
 import { Code } from "lucide-react";
+import { Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 export const Icons = {
   facebook: <Facebook className="w-4 h-4" />,
   snapchat: <FaSnapchat className="w-4 h-4" />,
@@ -64,4 +66,7 @@ export const Icons = {
   codechef: <Code className="w-4 h-4" />,
   geeksforgeeks: <Code className="w-4 h-4" />,
   spotify: <FaSpotify className="w-4 h-4" />,
+  website: <Globe2 className="w-4 h-4" />,
+  phone: <Phone className="w-4 h-4" />,
+  email: <Mail className="w-4 h-4" />,
 };

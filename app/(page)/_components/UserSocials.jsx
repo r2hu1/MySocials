@@ -22,11 +22,22 @@ export default function UserSocials({ userDataName }) {
 
   const [links, setLinks] = useState([]);
 
-  const [accessKey, setAccessKey] = useState("");
   const [showPrivate, setShowPrivate] = useState(false);
   const [inputKey, setInputKey] = useState("");
-  const [wrongKey, setWrongKey] = useState(false);
   const [error, setError] = useState(false);
+  const [accessError, setAccessError] = useState(false);
+
+  const handleInput = () => {
+    if (!inputKey) return;
+
+    if (inputKey === links.accessKey) {
+      setShowPrivate(true);
+      setAccessError(false);
+    } else {
+      setAccessError(true);
+      setShowPrivate(false);
+    }
+  };
 
   useEffect(() => {
     let username = userDataName;
@@ -86,7 +97,7 @@ export default function UserSocials({ userDataName }) {
     "buy me a coffee",
     "patreon",
   ];
-  const miscellaneous = ["personal website", "blog", "email", "phone"];
+  const miscellaneous = ["website", "blog", "email", "phone"];
 
   return (
     <div className="relative overflow-x-hidden px-6 md:px-20 lg:px-32 py-20 grid place-content-center">
@@ -208,7 +219,49 @@ export default function UserSocials({ userDataName }) {
               ) : null;
             })}
 
-          {links.accessKey && <div></div>}
+          {links.accessKey && (
+            <div className="border mt-10 px-4 py-3 rounded-lg mx-auto max-w-[420px]">
+              <p className="text-sm text-foreground/80 mb-2">Private Links</p>
+              <div className="flex items-center gap-2">
+                <Input
+                  value={inputKey}
+                  onChange={(e) => setInputKey(e.target.value)}
+                  placeholder="Enter Access Key"
+                />
+                <Button onClick={handleInput}>Unlock</Button>
+              </div>
+              {accessError && (
+                <p className="text-red-500 text-sm mt-2">Invalid Access Key</p>
+              )}
+              {showPrivate && (
+                <div className="mt-4 grid gap-3">
+                  {Object.entries(links)
+                    .filter(([key]) => miscellaneous.includes(key))
+                    .map(([key, value]) => {
+                      const Icon = Icons[key];
+                      return typeof value === "string" ||
+                        typeof value === "number" ? (
+                        <LinkCard
+                          className="!w-full !h-12"
+                          key={key}
+                          title={key.charAt(0).toUpperCase() + key.slice(1)}
+                          href={
+                            key == "email"
+                              ? `mailto:${value}`
+                              : key == "phone"
+                                ? `tel:${value}`
+                                : key == "website"
+                                  ? value
+                                  : key == "blog" && value
+                          }
+                          icon={Icons[key]}
+                        />
+                      ) : null;
+                    })}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       )}
       {error && (
