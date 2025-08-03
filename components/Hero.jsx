@@ -55,7 +55,7 @@ export default async function Hero() {
           </Link>
         </Button>
       </div>
-      <div className="mt-32 w-fit h-fit border-primary/10 border-2 rounded-lg">
+      <div className="mt-32 w-fit h-fit border-primary/10 border-2 rounded-lg mx-auto">
         <img
           className="rounded-lg"
           src="/assets/homepage-dark.png"
