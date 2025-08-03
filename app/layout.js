@@ -11,31 +11,39 @@ const poppins = Poppins({
 });
 export const metadata = {
   title: {
-    default: 'Mysocials',
-    template: '%s | Mysocials',
+    default: 'MySocials.',
+    template: '%s | MySocials',
   },
-  description: 'Open-Source link in bio tool for content creaters, developers and enthusiasts.',
+  description: 'One link to bring all your social profiles into one place.',
+   icons: {
+    icon: '/favicon.svg', 
+  },
 }
 
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={poppins.className}>
-           <NextTopLoader
-              color="hsl(229 100% 62%)"
-              initialPosition={0.08}
-              crawlSpeed={200}
-              height={3}
-              crawl={true}
-              showSpinner={false}
-              easing="ease"
-              speed={200}
-              shadow="0 0 0px hsl(229 100% 62%),0 0 0px hsl(229 100% 62%)"
-              template='<div class="bar" role="bar"><div class="peg"></div></div><div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
-              zIndex={1600}
-              showAtBottom={false}
-            />
+      <html
+        lang="en"
+        className={poppins.className}
+        suppressHydrationWarning
+      >
+        <body>
+          <NextTopLoader
+            color="hsl(229 100% 62%)"
+            initialPosition={0.08}
+            crawlSpeed={200}
+            height={3}
+            crawl={true}
+            showSpinner={false}
+            easing="ease"
+            speed={200}
+            shadow="0 0 0px hsl(229 100% 62%),0 0 0px hsl(229 100% 62%)"
+            template='<div class="bar" role="bar"><div class="peg"></div></div><div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
+            zIndex={1600}
+            showAtBottom={false}
+          />
+
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
@@ -43,10 +51,11 @@ export default function RootLayout({ children }) {
             disableTransitionOnChange={false}
           >
             {children}
-            <Toaster position="bottom-right"/>
+            <Toaster position="bottom-right" />
           </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
   )
 }
+

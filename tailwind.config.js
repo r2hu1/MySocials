@@ -7,6 +7,8 @@ module.exports = {
     './app/**/*.{js,jsx}',
     './src/**/*.{js,jsx}',
   ],
+
+
   prefix: "",
   theme: {
     container: {
@@ -55,6 +57,8 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+
+      
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
