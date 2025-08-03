@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/Footer";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -871,18 +872,8 @@ export default function UserSocials({ userDataName }) {
           </Button>
         </div>
       )}
-      <div className="mt-32 grid place-content-center text-center -mb-10">
-        <Logo />
-        {error ? (
-          <p className="text-xs mt-2 text-[13px]">
-            All rights reserved by <a href="/">MySocials.</a>
-          </p>
-        ) : (
-          <p className="text-xs mt-2 text-[13px]">
-            All rights reserved by {userDataName} with{" "}
-            <a href="/">MySocials.</a>
-          </p>
-        )}
+      <div className="mt-20 -mb-20">
+        <Footer />
       </div>
     </div>
   );
