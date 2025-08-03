@@ -1,7 +1,7 @@
 import User from "@/models/user";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
-import { currentUser } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
 
 export async function POST(request) {
   const { username, name, bio } = await request.json();
@@ -22,7 +22,7 @@ export async function POST(request) {
           email,
         },
       },
-      { upsert: true, new: true }
+      { upsert: true, new: true },
     );
 
     return NextResponse.json({ data }, { status: 200 });
