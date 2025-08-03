@@ -91,59 +91,63 @@ export default function UserSocials({ userDataName }) {
       !inputKey
     ) {
       let username = userDataName;
-      fetch("/api/page/get", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username: username }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setLoding(false);
-          if (data.data !== null) {
-            setImage(data.data.image);
-            setName(data.data.name);
-            setBio(data.data.bio);
-            setInsta(data.data.instagram);
-            setFace(data.data.facebook);
-            setSnapchat(data.data.snapchat);
-            setLinkedin(data.data.linkedin);
-            setTwitter(data.data.twitter);
-            setGithub(data.data.github);
-            setYoutube(data.data.youtube);
-            setThreads(data.data.threads || "");
-            setReddit(data.data.reddit || "");
-            setStackoverflow(data.data.stackoverflow || "");
-            setLeetcode(data.data.leetcode || "");
-            setCodeforces(data.data.codeforces || "");
-            setHackerrank(data.data.hackerrank || "");
-            setCodechef(data.data.codechef || "");
-            setGeeksForGeeks(data.data.geeksForGeeks || "");
-            setTwitch(data.data.twitch || "");
-            setSoundcloud(data.data.soundcloud || "");
-            setSpotify(data.data.spotify || "");
-            setApplemusic(data.data.applemusic || "");
-            setDiscord(data.data.discord || "");
-            setTelegram(data.data.telegram || "");
-            setWhatsapp(data.data.whatsapp || "");
-            setSkype(data.data.skype || "");
-            setAmazon(data.data.amazon || "");
-            setShopify(data.data.shopify || "");
-            setkofi(data.data.kofi || "");
-            setBuyMeACoffee(data.data.buyMeACoffee || "");
-            setPatreon(data.data.patreon || "");
-            setWebsite(data.data.website || "");
-            setBlog(data.data.blog || "");
-            setEmailField(data.data.email || "");
-            setPhone(data.data.phone || "");
-            setAccessKey(data.data.accessKey || "");
-            setInputKey(data.data.inputKey || "");
-            setShowPrivate(data.data.showPrivate || "");
-          } else {
-            setError(true);
-          }
-        });
+      try {
+        fetch("/api/page/get", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username: username }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            setLoding(false);
+            if (data.data !== null) {
+              setImage(data.data.image);
+              setName(data.data.name);
+              setBio(data.data.bio);
+              setInsta(data.data.instagram);
+              setFace(data.data.facebook);
+              setSnapchat(data.data.snapchat);
+              setLinkedin(data.data.linkedin);
+              setTwitter(data.data.twitter);
+              setGithub(data.data.github);
+              setYoutube(data.data.youtube);
+              setThreads(data.data.threads || "");
+              setReddit(data.data.reddit || "");
+              setStackoverflow(data.data.stackoverflow || "");
+              setLeetcode(data.data.leetcode || "");
+              setCodeforces(data.data.codeforces || "");
+              setHackerrank(data.data.hackerrank || "");
+              setCodechef(data.data.codechef || "");
+              setGeeksForGeeks(data.data.geeksForGeeks || "");
+              setTwitch(data.data.twitch || "");
+              setSoundcloud(data.data.soundcloud || "");
+              setSpotify(data.data.spotify || "");
+              setApplemusic(data.data.applemusic || "");
+              setDiscord(data.data.discord || "");
+              setTelegram(data.data.telegram || "");
+              setWhatsapp(data.data.whatsapp || "");
+              setSkype(data.data.skype || "");
+              setAmazon(data.data.amazon || "");
+              setShopify(data.data.shopify || "");
+              setkofi(data.data.kofi || "");
+              setBuyMeACoffee(data.data.buyMeACoffee || "");
+              setPatreon(data.data.patreon || "");
+              setWebsite(data.data.website || "");
+              setBlog(data.data.blog || "");
+              setEmailField(data.data.email || "");
+              setPhone(data.data.phone || "");
+              setAccessKey(data.data.accessKey || "");
+              setInputKey(data.data.inputKey || "");
+              setShowPrivate(data.data.showPrivate || "");
+            } else {
+              setError(true);
+            }
+          });
+      } catch (error) {
+        console.error(error);
+      }
     }
   });
 
