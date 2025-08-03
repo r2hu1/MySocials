@@ -6,8 +6,8 @@ import { currentUser } from "@clerk/nextjs/server";
 export async function POST(request) {
   const { username, name, bio } = await request.json();
 
-  const { emailAddresses } = await currentUser();
-  const email = emailAddresses[0].emailAddress;
+  // const { emailAddresses } = await currentUser();
+  // const email = emailAddresses[0].emailAddress;
 
   try {
     await mongoose.connect(process.env.NEXT_MONGO_URI);
