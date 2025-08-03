@@ -750,15 +750,17 @@ export default function UserSocials({ userDataName }) {
           {(accessKey || website || blog || emailField || phone) && (
             <div>
               {/* Heading */}
-              <div className="w-full gap-2 md:w-[420px] sm:w-[300px] font-semibold mx-auto h-14 flex items-center justify-center relative dark:text-white">
-                <img
-                  src="/assets/miscellaneous-icon.svg"
-                  alt="Miscellaneous"
-                  className="h-5 w-7"
-                  draggable="false"
-                />
-                <h2 className="text-base text-gray-500 ">Miscellaneous</h2>
-              </div>
+              {accessKey && (
+                <div className="w-full gap-2 md:w-[420px] sm:w-[300px] font-semibold mx-auto h-14 flex items-center justify-center relative dark:text-white">
+                  <img
+                    src="/assets/miscellaneous-icon.svg"
+                    alt="Miscellaneous"
+                    className="h-5 w-7"
+                    draggable="false"
+                  />
+                  <h2 className="text-base text-gray-500 ">Miscellaneous</h2>
+                </div>
+              )}
 
               {accessKey && !showPrivate && (
                 <div className="flex flex-col items-center gap-3 my-6">
