@@ -2,6 +2,7 @@
 
 import { ClerkLoading, SignOutButton } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+import { LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/Logo";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -15,17 +16,19 @@ export default function Header() {
       <div>
         <Logo />
       </div>
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2">
         <ClerkLoading>
           <Skeleton className="h-10 w-[80px] rounded" />
         </ClerkLoading>
 
         <SignOutButton
           signOutCallback={() => {
-            router.push("/sign-in"); 
+            router.push("/sign-in");
           }}
         >
-          <Button>Logout</Button>
+          <Button size="sm">
+            Logout <LogOut className="ml-2 !h-4 !w-4" />{" "}
+          </Button>
         </SignOutButton>
 
         <ModeToggle />
