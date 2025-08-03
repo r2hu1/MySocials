@@ -5,7 +5,7 @@ import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -18,10 +18,10 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        pulseBtn: "bg-primary text-primary-foreground hover:bg-primary/90 animate-pulseGlow",
-        spinner: "inline-flex border border-[4px] animate-spinner rounded-full border-r-primary",
-        skeleton: "bg-skeleton bg-[length:400%_100%] animate-skeleton text-transparent",
-        hover1: "bg-primary text-primary-foreground border-b-[4px] border-b-border-secondary hover:bg-primary/90 border-t-0 transition-all duration-100 ease-in-out hover:border-b-0 hover:border-t-[4px]",
+        pulseBtn: "bg-primary text-primary-foreground hover:bg-primary/90 animate-pulse-glow",
+        spinner: "inline-flex border border-4 animate-spinner rounded-full border-r-primary",
+        skeleton: "bg-skeleton bg-size-[400%_100%] animate-skeleton text-transparent",
+        hover1: "bg-primary text-primary-foreground border-b-4 border-b-border-secondary hover:bg-primary/90 border-t-0 transition-all duration-100 ease-in-out hover:border-b-0 hover:border-t-4",
         clickIn: "bg-primary hover:scale-[1.05] text-primary-foreground active:scale-[0.95] hover:bg-primary/90 transition",
         ringHover:"bg-primary text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:ring-2 hover:ring-primary/90 hover:ring-offset-2",
         popUp: "bg-primary text-primary-foreground transition-all hover:shadow-[4px_4px_0px_1px] hover:shadow-primary/50 dark:shadow-gray-600 hover:-translate-x-1 hover:-translate-y-1",
