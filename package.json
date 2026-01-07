@@ -24,7 +24,7 @@
     "lucide-react": "^0.303.0",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.3",
-    "next": "15.4.5",
+    "next": "15.4.10",
     "next-themes": "^0.2.1",
     "nextjs-toploader": "^1.6.4",
     "party-js": "^2.2.0",
